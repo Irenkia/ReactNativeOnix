@@ -1,11 +1,4 @@
 import {StyleSheet} from 'react-native';
-// export const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-// });
 
 export const styles = StyleSheet.create({
   MainContainer: {
@@ -25,8 +18,8 @@ export const styles = StyleSheet.create({
     bottom: 0,
   },
   marker: {
-    paddingVertical: 10,
-    paddingHorizontal: 30,
+    paddingVertical: 5,
+    paddingHorizontal: 15,
     backgroundColor: '#007bff',
     borderColor: '#eee',
     borderRadius: 5,

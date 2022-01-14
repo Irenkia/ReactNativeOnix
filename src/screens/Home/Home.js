@@ -63,7 +63,9 @@ export const Home = ({navigation}) => {
                     {item.carBrand + ' ' + item.carModel}
                   </Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => addToBasket(item)}>
+                <TouchableOpacity
+                  //disabled={true}
+                  onPress={() => addToBasket(item)}>
                   <Text style={[styles.basket, {color: colors.text}]}>
                     Add to basket
                   </Text>

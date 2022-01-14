@@ -2,8 +2,6 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // paddingTop: StatusBar.currentHeight,
-    // marginHorizontal: 16,
   },
   img: {
     width: 155,

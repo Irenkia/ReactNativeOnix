@@ -45,30 +45,6 @@ export const Basket = () => {
             }}
             showsVerticalScrollIndicator={false}
           />
-          {/* {carsBasket.length === 0 ? (
-            <Text style={[styles.textBottom, {color: colors.text}]}>
-              Add a car to basket.
-            </Text>
-          ) : (
-            <FlatList
-              data={carsBasket}
-              keyExtractor={item => item.id.toString()}
-              renderItem={({item}) => {
-                return (
-                  <View>
-                    <Image style={styles.img} source={{uri: item.img}} />
-                    <TouchableOpacity
-                      onPress={() => removeFromCarsBasket(item)}>
-                      <Text style={[styles.textButton, {color: colors.text}]}>
-                        Delete car
-                      </Text>
-                    </TouchableOpacity>
-                  </View>
-                );
-              }}
-              showsVerticalScrollIndicator={false}
-            />
-          )} */}
         </View>
       </View>
     </SafeAreaView>

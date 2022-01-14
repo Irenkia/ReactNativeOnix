@@ -1,12 +1,11 @@
-import React, {useContext} from 'react';
-import {View, Text} from 'react-native';
+import React from 'react';
+import {View} from 'react-native';
 import {styles} from './styles';
-import {ThemeContext} from '../../providers/ThemeProvider';
-import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
+import MapView, {Marker, PROVIDER_GOOGLE, Polygon} from 'react-native-maps';
 import {CustomMarker} from './CustomMarker';
+import {coordinates} from '../../constants/coordinates';
 
 export const Location = () => {
-  const {colors} = useContext(ThemeContext);
 
   const myRegion = {
     latitude: 48.5132,
@@ -15,17 +14,13 @@ export const Location = () => {
     longitudeDelta: 0.0421,
   };
   const myAdres = {
-    latitude: 48.507736,
-    longitude: 32.268455,
+    latitude: 48.5080075,
+    longitude: 32.2690776,
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   };
 
   return (
-    // <View style={[styles.container, {backgroundColor: colors.background}]}>
-    //   <Text style={[{color: colors.text}]}>Location</Text>
-    // </View>
-
     <View style={styles.MainContainer}>
       <MapView
         provider={PROVIDER_GOOGLE}
@@ -34,6 +29,11 @@ export const Location = () => {
         zoomEnabled={true}
         zoomControlEnabled={true}
         initialRegion={myRegion}>
+        <Polygon
+          coordinates={coordinates.points}
+          strokeWidth={0.5}
+          fillColor={'rgba(0, 128, 128, 0.3)'}
+        />
         <Marker
           coordinate={myAdres}
           title={'Kropyvnytskyi car rental'}
