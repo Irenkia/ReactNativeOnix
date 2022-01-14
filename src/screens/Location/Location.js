@@ -3,9 +3,23 @@ import {View, Text} from 'react-native';
 import {styles} from './styles';
 import {ThemeContext} from '../../providers/ThemeProvider';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
+import {CustomMarker} from './CustomMarker';
 
 export const Location = () => {
   const {colors} = useContext(ThemeContext);
+
+  const myRegion = {
+    latitude: 48.5132,
+    longitude: 32.2597,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  };
+  const myAdres = {
+    latitude: 48.507736,
+    longitude: 32.268455,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  };
 
   return (
     // <View style={[styles.container, {backgroundColor: colors.background}]}>
@@ -19,19 +33,13 @@ export const Location = () => {
         showsUserLocation={true}
         zoomEnabled={true}
         zoomControlEnabled={true}
-        initialRegion={{
-          latitude: 48.5132,
-          longitude: 32.2597,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}>
+        initialRegion={myRegion}>
         <Marker
-          coordinate={{latitude: 48.507736, longitude: 32.268455}}
-          //pinColor="green"
-          //image={require("./japaneseFlag.png")}
+          coordinate={myAdres}
           title={'Kropyvnytskyi car rental'}
-          description={'Kropyvnytskyi car rental any brands'}
-        />
+          description={'Kropyvnytskyi car rental any brands'}>
+          <CustomMarker />
+        </Marker>
       </MapView>
     </View>
   );

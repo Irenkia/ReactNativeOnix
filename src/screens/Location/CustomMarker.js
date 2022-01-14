@@ -4,7 +4,7 @@ import {styles} from './styles';
 //import {ThemeContext} from '../../providers/ThemeProvider';
 //import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 
-const CustomMarker =() =>{
+export const CustomMarker =() =>{
     return (
         <View style={styles.marker}>
           <Text style={styles.text}>Cars</Text>
@@ -12,4 +12,3 @@ const CustomMarker =() =>{
       );
 }
 
-export default CustomMarker;
