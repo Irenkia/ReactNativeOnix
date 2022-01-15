@@ -6,6 +6,7 @@ import {store, persistor} from './src/redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
 import ThemeProvider from './src/providers/ThemeProvider';
 import {DrawerNavigation} from './src/navigation/DrawerNavigation';
+
 const App = () => {
   return (
     <View style={styles.container}>
