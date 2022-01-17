@@ -12,13 +12,40 @@ export const styles = StyleSheet.create({
     fontSize: 22,
   },
   textBottom: {
-    fontSize: 18,
+    fontSize: 21,
   },
   textButton: {
-    fontSize: 15,
+    fontSize: 17,
+  },
+  deleteCarStyle: {
+    marginTop: 'auto',
+    width: '50%',
+    alignItems: 'center',
+    backgroundColor: 'skyblue',
   },
   img: {
-    width: 100,
-    height: 100,
+    width: 155,
+    height: 125,
+    marginRight: 10,
+    resizeMode: 'stretch',
+  },
+  counterCars: {
+    flexDirection: 'row',
+    width: '55%',
+    justifyContent: 'space-between',
+  },
+  counterText: {
+    fontWeight: 'bold',
+    fontSize: 28,
+  },
+  wrapper: {
+    flexDirection: 'row',
+  },
+  nameCar: {
+    fontWeight: 'bold',
+    fontSize: 21,
+  },
+  positionContent: {
+    marginTop: 15,
   },
 });

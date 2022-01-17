@@ -64,7 +64,7 @@ export const Home = ({navigation}) => {
                   </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  //disabled={true}
+                  // disabled={item ? false : true}
                   onPress={() => addToBasket(item)}>
                   <Text style={[styles.basket, {color: colors.text}]}>
                     Add to basket

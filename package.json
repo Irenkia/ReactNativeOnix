@@ -10,6 +10,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "appcenter": "4.3.0",
+    "appcenter-analytics": "4.3.0",
+    "appcenter-crashes": "4.3.0",
     "react": "17.0.2",
     "react-native": "0.66.4"
   },
@@ -39,6 +42,11 @@
     "redux-thunk": "^2.4.1"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupFiles": [
+      "<rootDir>/node_modules/appcenter/test/AppCenterMock.js",
+      "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js",
+      "<rootDir>/node_modules/appcenter-crashes/test/AppCenterCrashesMock.js"
+    ]
   }
 }
