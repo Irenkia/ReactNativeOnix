@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
-import {addCarsBasket, removeCarsBasket} from '../../redux/actions';
+import {removeCarsBasket} from '../../store/carsList/actions';
 import {ThemeContext} from '../../providers/ThemeProvider';
 import {styles} from './styles';
 import EmptyComponent from '../../components/EmptyComponent/EmptyComponent';

@@ -8,7 +8,7 @@ import {
   Switch,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
-import {addCarsBasket} from '../../redux/actions';
+import {addCarsBasket} from '../../store/carsList/actions';
 import {LIST_CARS} from '../../constants/constants';
 import {ThemeContext} from '../../providers/ThemeProvider';
 import PropTypes from 'prop-types';

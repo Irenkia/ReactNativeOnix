@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React, {useState} from 'react';
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import {Provider} from 'react-redux';
-import {store, persistor} from './src/redux/store';
+import {store, persistor} from './src/store/store';
 import {PersistGate} from 'redux-persist/integration/react';
 import ThemeProvider from './src/providers/ThemeProvider';
 import {DrawerNavigation} from './src/navigation/DrawerNavigation';

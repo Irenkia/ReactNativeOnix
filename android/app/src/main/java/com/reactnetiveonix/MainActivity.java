@@ -2,6 +2,8 @@ package com.reactnetiveonix;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;
+import android.content.res.Configuration;// <- for update theme
+
 public class MainActivity extends ReactActivity {
 
   /**
@@ -17,4 +19,10 @@ public class MainActivity extends ReactActivity {
   protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(null);
   }
+// for update theme
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+      super.onConfigurationChanged(newConfig);
+      getReactInstanceManager().onConfigurationChanged(this, newConfig);
+    }
 }
