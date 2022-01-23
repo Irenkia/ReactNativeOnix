@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "337019144486",
+    "project_id": "car-rental-4261d",
+    "storage_bucket": "car-rental-4261d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337019144486:android:a293d0f67397131f3c19e7",
+        "android_client_info": {
+          "package_name": "com.reactnetiveonix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "337019144486-tnavdb5m06a48f85lq9n98rmkhr3murh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV_fEPlQEA-SNdlpBEswbdCoaC3JIkhUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "337019144486-tnavdb5m06a48f85lq9n98rmkhr3murh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

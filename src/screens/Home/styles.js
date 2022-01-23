@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     resizeMode: 'stretch',
   },
   wrapper: {
-    margin: 12,
+    margin: 15,
     display: 'flex',
     flexDirection: 'row',
   },
