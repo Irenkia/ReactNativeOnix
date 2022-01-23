@@ -1,4 +1,5 @@
-import React, {useContext, useState} from 'react';
+import React, {useState, useContext} from 'react';
+//import React, {useState} from 'react';
 import {
   SafeAreaView,
   Text,
@@ -16,7 +17,6 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export const Basket = () => {
   const {colors} = useContext(ThemeContext);
-
   const {carsBasket} = useSelector(state => state.ReducerCars);
   const dispatch = useDispatch();
   const removeFromCarsBasket = car => dispatch(removeCarsBasket(car));
@@ -29,14 +29,6 @@ export const Basket = () => {
   const decrement = () => {
     setCounter(counter - 1);
   };
-
-  // const addToCarsBasket = car => dispatch(addCarsBasket(car));
-  // const deleteFromCarsBasket = car => dispatch(removeCarsBasket(car));
-
-  // const newCar =[];
-  //   const updateCarsBasket = (carsBasket, newCar, index) => {
-  //     if(newCar.===0)
-  //   };
 
   return (
     <SafeAreaView style={styles.container}>

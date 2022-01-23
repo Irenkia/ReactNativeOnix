@@ -48,7 +48,6 @@ export const Home = ({navigation}) => {
           See the SectionsList in the settings
         </Text>
       </View>
-
       <FlatList
         data={LIST_CARS}
         keyExtractor={item => item.id.toString()}
