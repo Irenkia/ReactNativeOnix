@@ -21,8 +21,8 @@ export const LIST_CARS = [
     id: 2,
     carBrand: 'Toyota',
     carModel: 'Yaris',
-    img: 'https://autos.yahoo.com.tw/y/r/w1200/iw/MMT/car/12142147582364.jpg',
-    // img: 'http://eva-comfort.ru/wp-content/uploads/2016/05/%D0%9A%D0%BE%D0%B2%D1%80%D1%8B-%D1%81%D0%B0%D0%BB%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5-Toyota-FunCargo-1999-2005-%D0%BF%D1%80%D0%B0%D0%B2%D1%8B%D0%B9-%D1%80%D1%83%D0%BB%D1%8C-450x350.jpg',
+    //img: 'https://autos.yahoo.com.tw/y/r/w1200/iw/MMT/car/12142147582364.jpg',
+    img: 'http://eva-comfort.ru/wp-content/uploads/2016/05/%D0%9A%D0%BE%D0%B2%D1%80%D1%8B-%D1%81%D0%B0%D0%BB%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5-Toyota-FunCargo-1999-2005-%D0%BF%D1%80%D0%B0%D0%B2%D1%8B%D0%B9-%D1%80%D1%83%D0%BB%D1%8C-450x350.jpg',
     descriptions:
       'Toyota Yaris. Depending on the modification, the length varies from 3615 to 4180 mm, and the width and height are the same in all cases - 1660 mm and 1510 mm, respectively. , 86 and 106 horsepower (90, 124 and 145 Nm of torque, respectively). A 1.4-liter turbodiesel "four" with a capacity of 75 "horses" was also installed on the car, the output of which amounted to 170 Nm of thrust.',
     price: 500,
