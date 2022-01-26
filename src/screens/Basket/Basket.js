@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   Text,
@@ -9,13 +9,12 @@ import {
 } from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {removeCarsBasket} from '../../store/carsList/actions';
-import {ThemeContext} from '../../providers/ThemeProvider';
 import {styles} from './styles';
 import EmptyComponent from '../../components/EmptyComponent/EmptyComponent';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export const Basket = () => {
-  const {colors} = useContext(ThemeContext);
+  const {theme} = useSelector(state => state.ReducerTheme);
   const {carsBasket} = useSelector(state => state.ReducerCars);
   const dispatch = useDispatch();
   const removeFromCarsBasket = car => dispatch(removeCarsBasket(car));
@@ -31,8 +30,9 @@ export const Basket = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={[styles.viewTop, {backgroundColor: colors.background}]}>
-        <Text style={[styles.textTop, {color: colors.text}]}>
+      <View
+        style={[styles.viewTop, {backgroundColor: theme.colors.background}]}>
+        <Text style={[styles.textTop, {color: theme.colors.text}]}>
           Your order basket
         </Text>
         <View style={styles.viewBottom}>
@@ -47,7 +47,8 @@ export const Basket = () => {
                     <View style={styles.wrapper}>
                       <Image style={styles.img} source={{uri: item.img}} />
                       <View style={{flexDirection: 'column'}}>
-                        <Text style={[styles.nameCar, {color: colors.text}]}>
+                        <Text
+                          style={[styles.nameCar, {color: theme.colors.text}]}>
                           {item.carBrand + ' ' + item.carModel}
                         </Text>
                         <View style={styles.counterCars}>
@@ -59,7 +60,10 @@ export const Basket = () => {
                             />
                           </TouchableOpacity>
                           <Text
-                            style={[styles.counterText, {color: colors.text}]}>
+                            style={[
+                              styles.counterText,
+                              {color: theme.colors.text},
+                            ]}>
                             {counter}
                           </Text>
                           <TouchableOpacity onPress={increment}>
@@ -71,7 +75,7 @@ export const Basket = () => {
                           </TouchableOpacity>
                         </View>
                         <View>
-                          <Text style={{color: colors.text}}>
+                          <Text style={{color: theme.colors.text}}>
                             {'Price - $ ' + item.price}
                           </Text>
                         </View>
@@ -79,7 +83,10 @@ export const Basket = () => {
                           style={styles.deleteCarStyle}
                           onPress={() => removeFromCarsBasket(item)}>
                           <Text
-                            style={[styles.textButton, {color: colors.text}]}>
+                            style={[
+                              styles.textButton,
+                              {color: theme.colors.text},
+                            ]}>
                             Delete car
                           </Text>
                         </TouchableOpacity>

@@ -1,19 +1,20 @@
-import React, {useContext} from 'react';
-import {View, Text, Image} from 'react-native';
+import React from 'react';
 import PropTypes from 'prop-types';
-import {ThemeContext} from '../../providers/ThemeProvider';
+import {View, Text, Image} from 'react-native';
 import {styles} from './styles';
+import {useSelector} from 'react-redux';
 
 export const Specifications = ({route}) => {
   const {item} = route.params;
-  const {colors} = useContext(ThemeContext);
+  const {theme} = useSelector(state => state.ReducerTheme);
   return (
-    <View style={[styles.container, {backgroundColor: colors.background}]}>
+    <View
+      style={[styles.container, {backgroundColor: theme.colors.background}]}>
       <Image style={styles.img} source={{uri: item.img}} />
-      <Text style={[styles.text, {color: colors.text}]}>
+      <Text style={[styles.text, {color: theme.colors.text}]}>
         {item.carBrand + ' ' + item.carModel}
       </Text>
-      <Text style={[styles.descriptions, {color: colors.text}]}>
+      <Text style={[styles.descriptions, {color: theme.colors.text}]}>
         {item.descriptions}
       </Text>
     </View>

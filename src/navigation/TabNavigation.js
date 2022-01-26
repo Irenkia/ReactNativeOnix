@@ -1,21 +1,21 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Settings} from '../screens/Settings/Settings';
 import {StackNavigation} from './StackNavigation';
-import {ThemeContext} from '../providers/ThemeProvider';
+import {useSelector} from 'react-redux';
 
 const Tab = createBottomTabNavigator();
 
 export const TabNavigation = () => {
-  const {colors} = useContext(ThemeContext);
+  const {theme} = useSelector(state => state.ReducerTheme);
   return (
     <Tab.Navigator
       initialRouteName="StackNavigation"
       screenOptions={{
         tabBarActiveTintColor: 'tomato',
         tabBarInactiveTintColor: 'gray',
-        tabBarStyle: {backgroundColor: colors.background},
+        tabBarStyle: {backgroundColor: theme.colors.background},
       }}>
       <Tab.Screen
         name="StackNavigation"
@@ -35,6 +35,10 @@ export const TabNavigation = () => {
           tabBarIcon: ({size, color}) => {
             return <Ionicons name={'settings'} size={size} color={color} />;
           },
+          headerStyle: {
+            backgroundColor: theme.colors.background,
+          },
+          headerTintColor: theme.colors.text,
         }}
       />
     </Tab.Navigator>

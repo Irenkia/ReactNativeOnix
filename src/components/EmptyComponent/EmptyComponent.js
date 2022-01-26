@@ -1,13 +1,19 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {Text, View} from 'react-native';
-import {ThemeContext} from '../../providers/ThemeProvider';
+import {useSelector} from 'react-redux';
 import {styles} from '../../screens/Basket/styles';
 
 const EmptyComponent = ({title}) => {
-  const {colors} = useContext(ThemeContext);
+  const {theme} = useSelector(state => state.ReducerTheme);
   return (
-    <View style={[styles.emptyContainer, {backgroundColor: colors.background}]}>
-      <Text style={[styles.emptyText, {color: colors.text}]}>{title}</Text>
+    <View
+      style={[
+        styles.emptyContainer,
+        {backgroundColor: theme.colors.background},
+      ]}>
+      <Text style={[styles.emptyText, {color: theme.colors.text}]}>
+        {title}
+      </Text>
     </View>
   );
 };

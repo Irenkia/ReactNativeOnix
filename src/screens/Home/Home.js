@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -7,44 +7,49 @@ import {
   TouchableOpacity,
   Switch,
 } from 'react-native';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {addCarsBasket} from '../../store/carsList/actions';
 import {LIST_CARS} from '../../constants/constants';
-import {ThemeContext} from '../../providers/ThemeProvider';
 import PropTypes from 'prop-types';
 import {styles} from './styles';
+import {changeTheme} from '../../store/theme/actions';
+import {DARK_COLORS, LIGHT_COLORS} from '../../constants/colors';
 
 export const Home = ({navigation}) => {
-  const {isDark, colors, setColorScheme} = useContext(ThemeContext);
-
-  const handleChangeColorTheme = isTrue =>
-    setColorScheme(isTrue ? 'dark' : 'light');
-
+  const {theme} = useSelector(state => state.ReducerTheme);
+  const [isTheme, setIsTheme] = useState(false);
   const dispatch = useDispatch();
+  const handleChangeColorTheme = () => {
+    setIsTheme(!isTheme);
+    if (theme === DARK_COLORS) {
+      dispatch(changeTheme(LIGHT_COLORS));
+    } else {
+      dispatch(changeTheme(DARK_COLORS));
+    }
+  };
 
   const addToBasket = car => {
     dispatch(addCarsBasket(car));
   };
 
   return (
-    <View style={[styles.container, {backgroundColor: colors.background}]}>
-      <View isDark={isDark} style={styles.toggleWrapper}>
-        <Text style={[styles.text, {color: colors.text}]}>
-          {isDark ? 'Dark' : 'Light'}
+    <View
+      style={[styles.container, {backgroundColor: theme.colors.background}]}>
+      <View style={styles.toggleWrapper}>
+        <Text style={[styles.text, {color: theme.colors.text}]}>
+          {isTheme ? 'Dark' : 'Light'}
           Mode
         </Text>
         <Switch
           style={styles.switch}
           trackColor={{false: '#767577', true: '#81b0ff'}}
-          thumbColor={colors.thumbColor}
-          value={isDark}
+          thumbColor={theme.colors.thumbColor}
+          value={isTheme}
           onValueChange={handleChangeColorTheme}
         />
       </View>
       <View>
-        <Text
-          isDark={isDark}
-          style={[styles.example, {color: colors.text}, {}]}>
+        <Text style={[styles.example, {color: theme.colors.text}]}>
           See the SectionsList in the settings
         </Text>
       </View>
@@ -58,14 +63,14 @@ export const Home = ({navigation}) => {
               <View>
                 <TouchableOpacity
                   onPress={() => navigation.navigate('Specifications', {item})}>
-                  <Text style={[styles.item, {color: colors.text}]}>
+                  <Text style={[styles.item, {color: theme.colors.text}]}>
                     {item.carBrand + ' ' + item.carModel}
                   </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   // disabled={item ? false : true}
                   onPress={() => addToBasket(item)}>
-                  <Text style={[styles.basket, {color: colors.text}]}>
+                  <Text style={[styles.basket, {color: theme.colors.text}]}>
                     Add to basket
                   </Text>
                 </TouchableOpacity>

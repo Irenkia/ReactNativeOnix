@@ -1,16 +1,19 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {View, Text, SectionList} from 'react-native';
 import {styles} from './styles';
 import {SECTION_LIST_CARS} from '../../constants/constants';
-import {ThemeContext} from '../../providers/ThemeProvider';
+import {useSelector} from 'react-redux';
 
 export const Settings = () => {
-  const {colors} = useContext(ThemeContext);
+  const {theme} = useSelector(state => state.ReducerTheme);
 
   return (
-    <View style={[styles.container, {backgroundColor: colors.background}]}>
+    <View
+      style={[styles.container, {backgroundColor: theme.colors.background}]}>
       <View style={{marginVertical: 20}}>
-        <Text style={[styles.title, {color: colors.text}]}>My SectionList</Text>
+        <Text style={[styles.title, {color: theme.colors.text}]}>
+          My SectionList
+        </Text>
       </View>
 
       <SectionList
@@ -18,12 +21,18 @@ export const Settings = () => {
         keyExtractor={(item, index) => item + index}
         renderItem={({item}) => (
           <View style={styles.item}>
-            <Text style={[styles.title, {color: colors.text}]}>{item}</Text>
+            <Text style={[styles.title, {color: theme.colors.text}]}>
+              {item}
+            </Text>
           </View>
         )}
-        renderSectionHeader={({section: {title}}) => (
-          <Text style={[styles.header, {color: colors.text}]}>{title}</Text>
-        )}
+        renderSectionHeader={({section: {title}}) => {
+          return (
+            <Text style={[styles.header, {color: theme.colors.text}]}>
+              {title}
+            </Text>
+          );
+        }}
       />
     </View>
   );

@@ -1,16 +1,17 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {Basket} from '../screens/Basket/Basket';
 import {Location} from '../screens/Location/Location';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {ThemeContext} from '../providers/ThemeProvider';
 import {TabNavigation} from './TabNavigation';
+import {useSelector} from 'react-redux';
 
 const Drawer = createDrawerNavigator();
 
 export const DrawerNavigation = () => {
-  const {colors} = useContext(ThemeContext);
+  const {theme} = useSelector(state => state.ReducerTheme);
+  //theme={theme === LIGHT_COLORS ? LIGHT_COLORS : DARK_COLORS}
   return (
     <SafeAreaProvider>
       <NavigationContainer>
@@ -18,13 +19,13 @@ export const DrawerNavigation = () => {
           screenOptions={{
             drawerStyle: {
               width: '60%',
-              backgroundColor: colors.background,
+              backgroundColor: theme.colors.background,
             },
             headerStyle: {
-              backgroundColor: colors.background,
+              backgroundColor: theme.colors.background,
             },
-            headerTintColor: colors.text,
-            drawerInactiveTintColor: colors.text,
+            headerTintColor: theme.colors.text,
+            drawerInactiveTintColor: theme.colors.text,
             drawerActiveTintColor: 'red',
             drawerType: 'slide',
           }}>

@@ -1,14 +1,13 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {ThemeContext} from '../providers/ThemeProvider';
 import {Home} from '../screens/Home/Home';
 import {Specifications} from '../screens/Specifications/Specifications';
+import {useSelector} from 'react-redux';
 
 const Stack = createNativeStackNavigator();
 
 export const StackNavigation = () => {
-  const {colors} = useContext(ThemeContext);
-
+  const {theme} = useSelector(state => state.ReducerTheme);
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -21,9 +20,9 @@ export const StackNavigation = () => {
         component={Specifications}
         options={{
           headerStyle: {
-            backgroundColor: colors.background,
+            backgroundColor: theme.colors.background,
           },
-          headerTintColor: colors.text,
+          headerTintColor: theme.colors.text,
         }}
       />
     </Stack.Navigator>
