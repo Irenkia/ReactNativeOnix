@@ -66,4 +66,24 @@ export const styles = StyleSheet.create({
     fontSize: 17,
     textAlign: 'right',
   },
+  listHeader: {
+    width: '100%',
+    height: 45,
+    backgroundColor: '#606070',
+  },
+  listHeadeText: {
+    fontSize: 32,
+    color: 'white',
+    textAlign: 'center',
+  },
+  listFooter:{
+    width:'100%',
+    height:25,
+    backgroundColor:'#606070',
+  },
+  listFooterText: {
+    fontSize: 17,
+    color: 'white',
+    textAlign: 'center',
+  },
 });

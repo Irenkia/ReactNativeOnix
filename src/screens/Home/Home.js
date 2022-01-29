@@ -32,6 +32,22 @@ export const Home = ({navigation}) => {
     dispatch(addCarsBasket(car));
   };
 
+  const listHeader = () => {
+    return (
+      <View style={styles.listHeader}>
+        <Text style={styles.listHeadeText}>Car Rental</Text>
+      </View>
+    );
+  };
+
+  const listFooter = () => {
+    return (
+      <View style={styles.listFooter}>
+        <Text style={styles.listFooterText}>Copyright (my Projekt)</Text>
+      </View>
+    );
+  };
+
   return (
     <View
       style={[styles.container, {backgroundColor: theme.colors.background}]}>
@@ -56,6 +72,8 @@ export const Home = ({navigation}) => {
       <FlatList
         data={LIST_CARS}
         keyExtractor={item => item.id.toString()}
+        ListHeaderComponent={listHeader}
+        ListFooterComponent={listFooter}
         renderItem={({item}) => {
           return (
             <View style={styles.wrapper}>
